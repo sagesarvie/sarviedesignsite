@@ -7,11 +7,7 @@
             |___/                                                         
 -->
 
-
-
-
 <html>
-
 <head>
   <link rel="icon" type="image/png" href="assets/images/120020.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,273 +16,422 @@
     html {
       margin: 0;
       background: white;
-      display: flex;
       -webkit-text-size-adjust: none;
     }
 
     body {
-      padding: 7vw;
+      padding: 0;
       background: white;
-      max-width: 1000px;
-      min-height: 100%;
-      margin: 0 auto;
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      position: relative;
     }
 
     @font-face {
       font-family: 'Pistilli Roman';
       src: url('assets/Pistilli-Roman.otf') format('opentype');
     }
+
     p {
-  font-family: Helvetica, sans-serif; 
-  font-size: 16px; 
-  line-height: 1;
-  color: #5c5c5c; 
-  margin: 2%;
-}
-.image-with-rotated-text {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-footer {
-  padding-bottom: 10px;
-}
-.rotated-text {
-  font-family: Helvetica;
-  text-decoration: none;
-  color: rgb(166, 173, 170);
-  writing-mode: vertical-rl; /* Rotate text 90 degrees */
-  margin-left: -12px;
-  transform: rotate(180deg); 
-  white-space: nowrap;
-  font-size: 1.05vw; 
-
-}
-.image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  margin: 2% auto;
-}
-
-.image-container img {
-  max-width: 80%;
-  /* box-sizing: border-box; */
-}
-
-img {
-      display: flex;
-      max-width: 80%;
-      box-sizing: border-box;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.2;
+      color: #5c5c5c;
+      margin: 0;
     }
-video {
-margin-bottom: 0px;
-max-width: 80%;
 
-}
+    .tagline {
+      margin-top: 120px;
+      margin-left: 40px;
+      font-size: 18px;
+    }
+
+    .subtagline {
+      margin-left: 40px;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    .content-wrapper {
+      width: 100%;
+      min-height: 2600px; /* Adjust based on content */
+      position: relative;
+    }
+
+    .image-container {
+      position: absolute;
+      width: 45%; /* Slightly reduced to prevent overlap */
+      max-width: 500px;
+      text-decoration: none;
+      display: block;
+      z-index: 1;
+    }
+
+    .image-with-rotated-text {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .image-container img,
+    .image-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .image-container:hover img,
+    .image-container:hover video {
+      transform: scale(1.02);
+    }
+
+    .rotated-text {
+      font-family: Helvetica;
+      text-decoration: none;
+      color: rgb(166, 173, 170);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      white-space: nowrap;
+      font-size: 14px;
+      position: absolute;
+      left: -30px; 
+      top: 50%;
+      margin-top: -50px;
+    }
+
+    video {
+      width: 100%;
+    }
+
     h1 {
-      font-family: 'Pistilli Roman', sans-serif;
+      font-family: 'Pistilli Roman', serif;
       color: rgb(192, 203, 186);
-      font-size: 7.5vw;
+      font-size: 64px;
       font-weight: normal;
       margin: 0;
       margin-left: 40px;
-      margin-bottom: 10px;
       position: fixed;
-      top: 0.2vw;
+      top: 20px;
       left: 0;
       transition: color 0.3s;
       cursor: pointer;
+      z-index: 100;
     }
 
     h1:hover {
       color: grey;
     }
+
     .rotated-text:hover {
-  color: gray;
-}
-
-    #email-link {
-      position: fixed;
-      font-size: 1.25vw;
-      /* Relative to the body width */
-      top: 2.5%;
-      /* Adjust position relative to font size */
-      right: 5%;
-      text-decoration: none;
-      font-family: Helvetica, sans-serif;
-      color: rgb(166, 173, 170);
+      color: gray;
     }
 
-    #ig-link {
+    .nav-links {
       position: fixed;
-      font-size: 1.25vw;
-      top: 5.5%;
-      right: 5%;
-      text-decoration: none;
-      font-family: Helvetica, sans-serif;
-      color: rgb(166, 173, 170);
+      top: 40px;
+      right: 40px;
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
     }
-    #about-link {
-      position: fixed;
-      font-size: 1.25vw;
-      top: 8.5%;
-      right: 5%;
-      text-decoration: none;
-      font-family: Helvetica, sans-serif;
-      color: rgb(166, 173, 170);
-    }
-    #nft-link {
-      position: fixed;
-      font-size: 1.25vw;
-      top: 11.5%;
-      right: 5%;
-      text-decoration: none;
-      font-family: Helvetica, sans-serif;
-      color: rgb(166, 173, 170);
-    }
-    
 
-#email-link:hover,
-#ig-link:hover,
-#nft-link:hover,
-#about-link:hover {
-  color: gray; /* Change 'your-hover-color' to the desired hover color */
-}
-    @media (max-width: 1000px) {
-
-      body {
-        padding: 10%;
-      }
-      h1{
-        margin-top: 2%;
-      }
-      #email-link {
-        font-size: 2vw;
-      }
-      #ig-link {
-        font-size: 2vw;
-        top: 4.25%;
-      }
-      #about-link {
-        font-size: 2vw;
-        top: 6%;
-      }
-      #nft-link {
-        font-size: 2vw;
-        top: 8%;
-      }
-     
-    
-    .image-container {
-      text-align: left;
-      align-items: center;
-      }
-    .image-with-rotated-text {
-    display: flex;
-    align-items: center;
-  }
-  .rotated-text {
-    display: none;
-  }
-    .image-with-rotated-text img {
-    max-width: 80%;
-    margin-top: 5% auto;
-    align-items: center;
-  }
-    video {
-      display: block;
-      margin: 2% auto;
-      max-width: 80%;
+    .nav-link {
+      font-size: 16px;
+      margin-bottom: 2px; /* Reduced spacing between links */
+      text-decoration: none;
+      font-family: Helvetica, sans-serif;
+      font-weight: bold;
+      color: rgb(166, 173, 170);
+      transition: color 0.3s;
     }
-  }
+
+    .nav-link:hover {
+      color: gray;
+    }
+
+    footer {
+      padding: 20px 0 40px;
+      text-align: center;
+    }
+
+    /* Position each image specifically */
+    #floating-house {
+      left: 15%;
+      top: 180px;
+      height: auto;
+    }
+
+    #cube-house {
+      right: 12%;
+      top: 600px; /* Adjusted to prevent overlap */
+      height: auto;
+    }
+
+    #pond-lounge {
+      left: 25%;
+      top: 1100px; /* Adjusted to prevent overlap */
+      height: auto;
+    }
+
+    #bedroom-render {
+      right: 15%;
+      top: 1600px; /* Adjusted to prevent overlap */
+      height: auto;
+    }
+
+    #product-design {
+      left: 20%;
+      top: 2100px; /* Adjusted to prevent overlap */
+      height: auto;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1200px) {
+      .image-container {
+        width: 50%;
+      }
+      
+      #floating-house {
+        left: 10%;
+      }
+      
+      #cube-house {
+        right: 8%;
+        top: 550px;
+      }
+      
+      #pond-lounge {
+        left: 15%;
+        top: 1000px;
+      }
+      
+      #bedroom-render {
+        right: 10%;
+        top: 1450px;
+      }
+      
+      #product-design {
+        left: 12%;
+        top: 1900px;
+      }
+      
+      .content-wrapper {
+        min-height: 2400px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 48px;
+      }
+      
+      .image-container {
+        width: 60%;
+      }
+      
+      #cube-house {
+        top: 500px;
+      }
+      
+      #pond-lounge {
+        top: 900px;
+      }
+      
+      #bedroom-render {
+        top: 1300px;
+      }
+      
+      #product-design {
+        top: 1700px;
+      }
+      
+      .content-wrapper {
+        min-height: 2100px;
+      }
+    }
+
+    /* Mobile-specific styles with guaranteed no overlap */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 42px;
+        margin-left: 20px;
+      }
+
+      .tagline, .subtagline {
+        margin-left: 20px;
+        font-size: 16px;
+      }
+
+      .tagline {
+        margin-top: 100px;
+      }
+
+      .subtagline {
+        margin-bottom: 30px;
+      }
+
+      .nav-links {
+        top: 30px;
+        right: 20px;
+      }
+
+      .nav-link {
+        font-size: 14px;
+        margin-bottom: 4px; /* Even smaller spacing on mobile */
+      }
+
+      .rotated-text {
+        display: none;
+      }
+
+      /* Switch to vertical stacking layout on mobile */
+      .content-wrapper {
+        min-height: 2000px; /* Adjusted for stacked content */
+      }
+      
+      .image-container {
+        position: relative; /* Change from absolute to relative */
+        width: 90%;
+        margin: 0 auto 40px; /* Center images with margin bottom */
+        left: auto !important; /* Remove absolute positioning */
+        right: auto !important;
+        top: auto !important;
+      }
+      
+      /* Reset all specific positioning */
+      #floating-house, #cube-house, #pond-lounge, #bedroom-render, #product-design {
+        position: static;
+        display: block;
+        margin-bottom: 60px; /* Ensure space between images */
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 36px;
+      }
+      
+      .tagline, .subtagline {
+        font-size: 14px;
+      }
+      
+      .nav-link {
+        font-size: 12px;
+        margin-bottom: 3px;
+      }
+      
+      .image-container {
+        width: 90%;
+        margin-bottom: 40px;
+      }
+      
+      #floating-house, #cube-house, #pond-lounge, #bedroom-render, #product-design {
+        margin-bottom: 50px;
+      }
+    }
   </style>
-  
 </head>
 
 <body>
+  <a href="#top" id="top">
+    <h1 id="scrollToTop">sage sarvie</h1>
+  </a>
 
-  <a id="email-link" href="mailto:sagesarvie@gmail.com">sagesarvie@gmail.com</a>
-  <a id="ig-link" href="https://www.instagram.com/sagesarvie">@sagesarvie</a>
-  <a id="nft-link" href="nft.html">nfts</a>
-  <a id="about-link" href="about.html">about</a>
-  <a id="top"></a>
-  <a href="#top">
-    <h1 id="scrollToTop">
-      sage sarvie
-    </h1>
-    <script>
-      document.getElementById("scrollToTop").addEventListener("click", function () {
-        scrollToTop(1000); // Adjust the duration (in milliseconds) for a slower transition
+  <div class="nav-links">
+    <a class="nav-link" href="mailto:sagesarvie@gmail.com">sagesarvie@gmail.com</a>
+    <a class="nav-link" href="https://instagram.com/sagesarvie">@sagesarvie</a>
+    <a class="nav-link" href="about.html">about</a>
+    <a class="nav-link" href="nft.html">nfts</a>
+  </div>
+
+  <p class="tagline">engineer / designer / MBA.</p>
+  <p class="subtagline">a visual thinker translating emotion into experience.</p>
+
+  <div class="content-wrapper">
+    <a href="cliff.html" class="image-container" id="floating-house">
+      <div class="image-with-rotated-text">
+        <span class="rotated-text">floating house</span>
+        <img src="assets/images/Floatingday.png" alt="Floating house design">
+      </div>
+    </a>
+    
+    <a href="desert.html" class="image-container" id="cube-house">
+      <div class="image-with-rotated-text">
+        <span class="rotated-text">cube house</span>
+        <img src="assets/images/Cubehouseday.png" alt="Cube house design">
+      </div>
+    </a>
+    
+    <a href="conversation.html" class="image-container" id="pond-lounge">
+      <div class="image-with-rotated-text">
+        <span class="rotated-text">pond lounge</span>
+        <img src="assets/images/Pondloungeday.png" alt="Pond lounge design">
+      </div>
+    </a>
+    
+    <a href="bedrooms.html" class="image-container" id="bedroom-render">
+      <div class="image-with-rotated-text">
+        <span class="rotated-text">bedroom render</span>
+        <video autoplay loop muted playsinline>
+          <source src="assets/videos/0001-0288.mp4" type="video/mp4">
+        </video>
+      </div>
+    </a>
+    
+    <a href="productdesign.html" class="image-container" id="product-design">
+      <div class="image-with-rotated-text">
+        <span class="rotated-text">product design</span>
+        <img src="assets/images/ProductDesert2.jpg" alt="Product design">
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    <!-- Footer content -->
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Remove controls attribute from video but keep autoplay and loop
+      const videos = document.querySelectorAll('video');
+      videos.forEach(video => {
+        video.removeAttribute('controls');
       });
-
-      function scrollToTop(duration) {
-        const start = window.pageYOffset;
-        const startTime = performance.now();
-
-        function step(currentTime) {
-          const elapsedTime = currentTime - startTime;
-          const scrollTo = easeInOut(elapsedTime, start, -start, duration);
-          window.scrollTo(0, scrollTo);
-
-          if (elapsedTime < duration) {
-            requestAnimationFrame(step);
+      
+      // Function to adjust content spacing based on window size
+      function adjustLayout() {
+        // Get viewport dimensions
+        const windowWidth = window.innerWidth;
+        
+        // On mobile, reset positioning to prevent any overlap
+        if (windowWidth <= 768) {
+          const contentWrapper = document.querySelector('.content-wrapper');
+          const imageContainers = document.querySelectorAll('.image-container');
+          
+          // Calculate total height needed based on images
+          let totalHeight = 0;
+          imageContainers.forEach(container => {
+            if (windowWidth <= 480) {
+              totalHeight += container.offsetHeight + 50; // Image height + margin
+            } else {
+              totalHeight += container.offsetHeight + 60; // Image height + margin
+            }
+          });
+          
+          // Adjust content wrapper height if needed
+          if (totalHeight > 0) {
+            contentWrapper.style.minHeight = (totalHeight + 200) + 'px'; // Add some extra padding
           }
         }
-
-        function easeInOut(t, b, c, d) {
-          t /= d / 2;
-          if (t < 1) return (c / 2) * t * t + b;
-          t--;
-          return (-c / 2) * (t * (t - 2) - 1) + b;
-        }
-        requestAnimationFrame(step);
       }
-    </script>
-  </a>
-  <a href="cliff.html">
-    <div class="image-container">
-      <div class="image-with-rotated-text">
-        
-        <img src="assets/images/Floatingday.png" id="first-image">
-      </div>
-    </div>
-  </a>
-  
-  <a href="desert.html">
-    <div class="image-container">
-      <div class="image-with-rotated-text">
-        <img src="assets/images/Cubehouseday.png">
-      </div>
-    </div>
-  </a>
-  
-  <a href="conversation.html">
-    <div class="image-container">
-      <div class="image-with-rotated-text">
-        <img src="assets/images/Pondloungeday.png">
-      </div>
-    </div>
-  </a>
-   
-  <a href="bedrooms.html">
-    <div class="image-container">
-      <video autoplay loop muted controls>
-        <source src="assets/videos/0001-0288.mp4" type="video/mp4">
-      </video>
-    </div>
-  </a>
-  
-  <a href="productdesign.html">
-    <div class="image-container">
-      <img src="assets/images/ProductDesert2.jpg">
-    </div>
-  </a>
+      
+      // Run on load and resize
+      window.addEventListener('load', adjustLayout);
+      window.addEventListener('resize', adjustLayout);
+    });
+  </script>
 </body>
-<footer>
-  <p></p>
-</footer>
 </html>
