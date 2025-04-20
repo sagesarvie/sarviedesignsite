@@ -1,32 +1,18 @@
-<!--
-                                            _     _          _     _      
-  ___  __ _  __ _  ___  __      _____  _ __| | __| |_      _(_) __| | ___ 
- / __|/ _` |/ _` |/ _ \ \ \ /\ / / _ \| '__| |/ _` \ \ /\ / / |/ _` |/ _ \
- \__ \ (_| | (_| |  __/  \ V  V / (_) | |  | | (_| |\ V  V /| | (_| |  __/
- |___/\__,_|\__, |\___|   \_/\_/ \___/|_|  |_|\__,_| \_/\_/ |_|\__,_|\___|
-            |___/                                                         
--->
-
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="icon" type="image/png" href="assets/images/120020.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>sage sarvie</title>
   <style>
-    html {
-      margin: 0;
-      background: white;
-      -webkit-text-size-adjust: none;
-    }
-
     body {
-      padding: 0;
+      margin: 0;
+      padding-bottom: 60px;
       background: white;
       width: 100%;
       min-height: 100vh;
-      margin: 0;
       overflow-x: hidden;
-      position: relative;
+      -webkit-text-size-adjust: none;
     }
 
     @font-face {
@@ -43,7 +29,7 @@
     }
 
     .tagline {
-      margin-top: 120px;
+      margin-top: 12vw;
       margin-left: 40px;
       font-size: 18px;
     }
@@ -56,13 +42,13 @@
 
     .content-wrapper {
       width: 100%;
-      min-height: 2600px; /* Adjust based on content */
       position: relative;
+      padding-bottom: 60px;
     }
 
     .image-container {
       position: absolute;
-      width: 45%; /* Slightly reduced to prevent overlap */
+      width: 45%;
       max-width: 500px;
       text-decoration: none;
       display: block;
@@ -90,57 +76,49 @@
 
     .rotated-text {
       font-family: Helvetica;
-      text-decoration: none;
+      font-weight: bold;
       color: rgb(166, 173, 170);
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       white-space: nowrap;
-      font-size: 14px;
+      font-size: 25px;
       position: absolute;
-      left: -30px; 
+      left: -30px;
       top: 50%;
       margin-top: -50px;
-    }
-
-    video {
-      width: 100%;
     }
 
     h1 {
       font-family: 'Pistilli Roman', serif;
       color: rgb(192, 203, 186);
-      font-size: 64px;
+      font-size: 8vw;
       font-weight: normal;
       margin: 0;
       margin-left: 40px;
       position: fixed;
-      top: 20px;
+      top: 10px;
       left: 0;
-      transition: color 0.3s;
       cursor: pointer;
       z-index: 100;
+      transition: color 0.3s;
     }
 
     h1:hover {
       color: grey;
     }
 
-    .rotated-text:hover {
-      color: gray;
-    }
-
     .nav-links {
       position: fixed;
-      top: 40px;
-      right: 40px;
+      top: 50px;
+      right: 60px;
       display: flex;
       flex-direction: column;
       z-index: 100;
     }
 
     .nav-link {
-      font-size: 16px;
-      margin-bottom: 2px; /* Reduced spacing between links */
+      font-size: 20px;
+      margin-bottom: 2px;
       text-decoration: none;
       font-family: Helvetica, sans-serif;
       font-weight: bold;
@@ -153,124 +131,47 @@
     }
 
     footer {
-      padding: 20px 0 40px;
+      height: 60px;
       text-align: center;
     }
 
-    /* Position each image specifically */
-    #floating-house {
-      left: 15%;
-      top: 180px;
-      height: auto;
-    }
+    /* Position each image */
+    #floating-house { left: 12%; top: 10px; }
+    #cube-house { right: 12%; top: 320px; }
+    #pond-lounge { left: 17%; top: 780px; }
+    #bedroom-render { right: 15%; top: 1180px; }
+    #product-design { left: 14%; top: 1580px; }
 
-    #cube-house {
-      right: 12%;
-      top: 600px; /* Adjusted to prevent overlap */
-      height: auto;
-    }
-
-    #pond-lounge {
-      left: 25%;
-      top: 1100px; /* Adjusted to prevent overlap */
-      height: auto;
-    }
-
-    #bedroom-render {
-      right: 15%;
-      top: 1600px; /* Adjusted to prevent overlap */
-      height: auto;
-    }
-
-    #product-design {
-      left: 20%;
-      top: 2100px; /* Adjusted to prevent overlap */
-      height: auto;
-    }
-
-    /* Responsive breakpoints */
-    @media (max-width: 1200px) {
+    /* Responsive: Tablets & small desktops */
+    @media (max-width: 1000px) {
       .image-container {
-        width: 50%;
+        position: relative;
+        width: 80%;
+        margin: 40px auto;
       }
-      
-      #floating-house {
-        left: 10%;
-      }
-      
-      #cube-house {
-        right: 8%;
-        top: 550px;
-      }
-      
-      #pond-lounge {
-        left: 15%;
-        top: 1000px;
-      }
-      
-      #bedroom-render {
-        right: 10%;
-        top: 1450px;
-      }
-      
-      #product-design {
-        left: 12%;
-        top: 1900px;
-      }
-      
+
       .content-wrapper {
-        min-height: 2400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #floating-house, #cube-house, #pond-lounge, #bedroom-render, #product-design {
+        position: static;
+        margin-bottom: 60px;
       }
     }
 
-    @media (max-width: 900px) {
-      h1 {
-        font-size: 48px;
-      }
-      
-      .image-container {
-        width: 60%;
-      }
-      
-      #cube-house {
-        top: 500px;
-      }
-      
-      #pond-lounge {
-        top: 900px;
-      }
-      
-      #bedroom-render {
-        top: 1300px;
-      }
-      
-      #product-design {
-        top: 1700px;
-      }
-      
-      .content-wrapper {
-        min-height: 2100px;
-      }
-    }
-
-    /* Mobile-specific styles with guaranteed no overlap */
+    /* Responsive: Mobile */
     @media (max-width: 768px) {
       h1 {
-        font-size: 42px;
+        font-size: 8vw;
         margin-left: 20px;
       }
 
       .tagline, .subtagline {
         margin-left: 20px;
-        font-size: 16px;
-      }
-
-      .tagline {
-        margin-top: 100px;
-      }
-
-      .subtagline {
-        margin-bottom: 30px;
+        font-size: 2.5vw;
       }
 
       .nav-links {
@@ -280,65 +181,44 @@
 
       .nav-link {
         font-size: 14px;
-        margin-bottom: 4px; /* Even smaller spacing on mobile */
+        margin-bottom: 4px;
       }
 
       .rotated-text {
         display: none;
       }
 
-      /* Switch to vertical stacking layout on mobile */
-      .content-wrapper {
-        min-height: 2000px; /* Adjusted for stacked content */
-      }
-      
-      .image-container {
-        position: relative; /* Change from absolute to relative */
-        width: 90%;
-        margin: 0 auto 40px; /* Center images with margin bottom */
-        left: auto !important; /* Remove absolute positioning */
-        right: auto !important;
-        top: auto !important;
-      }
-      
-      /* Reset all specific positioning */
-      #floating-house, #cube-house, #pond-lounge, #bedroom-render, #product-design {
-        position: static;
-        display: block;
-        margin-bottom: 60px; /* Ensure space between images */
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 36px;
-      }
-      
-      .tagline, .subtagline {
-        font-size: 14px;
-      }
-      
-      .nav-link {
-        font-size: 12px;
-        margin-bottom: 3px;
-      }
-      
       .image-container {
         width: 90%;
         margin-bottom: 40px;
       }
-      
-      #floating-house, #cube-house, #pond-lounge, #bedroom-render, #product-design {
-        margin-bottom: 50px;
+
+      .content-wrapper {
+        padding-bottom: 60px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tagline, .subtagline {
+        font-size: 14px;
+      }
+
+      .nav-link {
+        font-size: 12px;
+      }
+
+      .image-container {
+        width: 90%;
       }
     }
   </style>
 </head>
 
 <body>
-  <a href="#top" id="top">
+  <div id="top"></div>
+  <div onclick="scrollToTop()" style="cursor: pointer;">
     <h1 id="scrollToTop">sage sarvie</h1>
-  </a>
+  </div>
 
   <div class="nav-links">
     <a class="nav-link" href="mailto:sagesarvie@gmail.com">sagesarvie@gmail.com</a>
@@ -347,90 +227,59 @@
     <a class="nav-link" href="nft.html">nfts</a>
   </div>
 
-  <p class="tagline">engineer / designer / MBA.</p>
+  <p class="tagline">architectural engineer / designer / MBA.</p>
   <p class="subtagline">a visual thinker translating emotion into experience.</p>
+  <p class="subtagline">explore each chapter below ↓</p>
 
   <div class="content-wrapper">
     <a href="cliff.html" class="image-container" id="floating-house">
       <div class="image-with-rotated-text">
-        <span class="rotated-text">floating house</span>
-        <img src="assets/images/Floatingday.png" alt="Floating house design">
+        <span class="rotated-text">architecture</span>
+        <img src="assets/images/SiennaCondos Outline.png" alt="Floating house design">
       </div>
     </a>
-    
+
     <a href="desert.html" class="image-container" id="cube-house">
       <div class="image-with-rotated-text">
-        <span class="rotated-text">cube house</span>
-        <img src="assets/images/Cubehouseday.png" alt="Cube house design">
+        <span class="rotated-text">goyoki</span>
+        <img src="assets/images/goyoki boobina.png" alt="Cube house design">
       </div>
     </a>
-    
+
     <a href="conversation.html" class="image-container" id="pond-lounge">
       <div class="image-with-rotated-text">
-        <span class="rotated-text">pond lounge</span>
-        <img src="assets/images/Pondloungeday.png" alt="Pond lounge design">
+        <span class="rotated-text">digital art</span>
+        <img src="assets/images/Cubehouseday.png" alt="Pond lounge design">
       </div>
     </a>
-    
-    <a href="bedrooms.html" class="image-container" id="bedroom-render">
+
+    <a href="nft.html" class="image-container" id="bedroom-render">
       <div class="image-with-rotated-text">
-        <span class="rotated-text">bedroom render</span>
+        <span class="rotated-text">nfts</span>
         <video autoplay loop muted playsinline>
           <source src="assets/videos/0001-0288.mp4" type="video/mp4">
         </video>
       </div>
     </a>
-    
-    <a href="productdesign.html" class="image-container" id="product-design">
+
+    <a href="about.html" class="image-container" id="product-design">
       <div class="image-with-rotated-text">
-        <span class="rotated-text">product design</span>
-        <img src="assets/images/ProductDesert2.jpg" alt="Product design">
+        <span class="rotated-text">about</span>
+        <img src="assets/images/Sage_Wild_Retouched-1.jpeg" alt="Product design">
       </div>
     </a>
   </div>
 
-  <footer>
-    <!-- Footer content -->
-  </footer>
+  <footer></footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Remove controls attribute from video but keep autoplay and loop
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
       const videos = document.querySelectorAll('video');
-      videos.forEach(video => {
-        video.removeAttribute('controls');
-      });
-      
-      // Function to adjust content spacing based on window size
-      function adjustLayout() {
-        // Get viewport dimensions
-        const windowWidth = window.innerWidth;
-        
-        // On mobile, reset positioning to prevent any overlap
-        if (windowWidth <= 768) {
-          const contentWrapper = document.querySelector('.content-wrapper');
-          const imageContainers = document.querySelectorAll('.image-container');
-          
-          // Calculate total height needed based on images
-          let totalHeight = 0;
-          imageContainers.forEach(container => {
-            if (windowWidth <= 480) {
-              totalHeight += container.offsetHeight + 50; // Image height + margin
-            } else {
-              totalHeight += container.offsetHeight + 60; // Image height + margin
-            }
-          });
-          
-          // Adjust content wrapper height if needed
-          if (totalHeight > 0) {
-            contentWrapper.style.minHeight = (totalHeight + 200) + 'px'; // Add some extra padding
-          }
-        }
-      }
-      
-      // Run on load and resize
-      window.addEventListener('load', adjustLayout);
-      window.addEventListener('resize', adjustLayout);
+      videos.forEach(video => video.removeAttribute('controls'));
     });
   </script>
 </body>
