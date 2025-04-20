@@ -6,13 +6,13 @@
   <title>sage sarvie</title>
   <style>
     body {
-      margin: 0;
       padding-bottom: 60px;
       background: white;
       width: 100%;
       min-height: 100vh;
       overflow-x: hidden;
       -webkit-text-size-adjust: none;
+      margin: 0;
     }
 
     @font-face {
@@ -135,34 +135,22 @@
       text-align: center;
     }
 
-    /* Position each image */
     #floating-house { left: 12%; top: 10px; }
-    #cube-house { right: 12%; top: 320px; }
-    #pond-lounge { left: 17%; top: 780px; }
-    #bedroom-render { right: 15%; top: 1180px; }
-    #product-design { left: 14%; top: 1580px; }
+    #cube-house { right: 12%; top: 300px; }
+    #pond-lounge { left: 17%; top: 700px; }
+    #bedroom-render { right: 15%; top: 900px; }
+    #product-design { left: 14%; top: 1500px; }
 
-    /* Responsive: Tablets & small desktops */
-    @media (max-width: 1000px) {
-      .image-container {
-        position: relative;
-        width: 80%;
-        margin: 40px auto;
-      }
-
-      .content-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      #floating-house, #cube-house, #pond-lounge, #bedroom-render, #product-design {
-        position: static;
-        margin-bottom: 60px;
-      }
+    /* Responsive styles */
+    @media (max-width: 1200px) {
+      .image-container { width: 50%; }
     }
 
-    /* Responsive: Mobile */
+    @media (max-width: 900px) {
+      h1 { font-size: 8vw; }
+      .image-container { width: 60%; }
+    }
+
     @media (max-width: 768px) {
       h1 {
         font-size: 8vw;
@@ -185,16 +173,40 @@
       }
 
       .rotated-text {
-        display: none;
-      }
-
-      .image-container {
-        width: 90%;
-        margin-bottom: 40px;
+        writing-mode: horizontal-tb;
+        transform: none;
+        position: static;
+        text-align: center;
+        font-size: 18px;
+        margin: 10px 0 5px;
+        display: block;
       }
 
       .content-wrapper {
-        padding-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+        position: static;
+      }
+
+      .image-container {
+        position: relative;
+        width: 90%;
+        margin: 0 auto 40px;
+        text-align: center;
+      }
+
+      .image-with-rotated-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-container img,
+      .image-container video {
+        max-width: 100%;
+        margin: 0 auto;
       }
     }
 
@@ -205,10 +217,12 @@
 
       .nav-link {
         font-size: 12px;
+        margin-bottom: 3px;
       }
 
       .image-container {
         width: 90%;
+        margin-bottom: 40px;
       }
     }
   </style>
@@ -232,7 +246,7 @@
   <p class="subtagline">explore each chapter below ↓</p>
 
   <div class="content-wrapper">
-    <a href="cliff.html" class="image-container" id="floating-house">
+    <a href="architecture.html" class="image-container" id="floating-house">
       <div class="image-with-rotated-text">
         <span class="rotated-text">architecture</span>
         <img src="assets/images/SiennaCondos Outline.png" alt="Floating house design">
@@ -249,7 +263,7 @@
     <a href="conversation.html" class="image-container" id="pond-lounge">
       <div class="image-with-rotated-text">
         <span class="rotated-text">digital art</span>
-        <img src="assets/images/Cubehouseday.png" alt="Pond lounge design">
+        <img src="assets/images/Submerged SS.jpg" alt="Pond lounge design">
       </div>
     </a>
 
@@ -270,7 +284,7 @@
     </a>
   </div>
 
-  <footer></footer>
+  <footer style="height: 60px;"></footer>
 
   <script>
     function scrollToTop() {
