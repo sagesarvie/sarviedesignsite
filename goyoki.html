@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="goyoki.css" /> 
+    <link rel="stylesheet" type="text/css" href="subpage-footer.css" /> 
+    <link rel="stylesheet" type="text/css" href="subpage-header.css" /> 
+    <title>sage sarvie | goyoki</title>
+    <style>
+      /* Additional styles for the new layout */
+      .hero-section {
+        width: 100%;
+        height: 700px; /* Fixed banner height */
+        margin-bottom: 2rem;
+        overflow: hidden; /* Ensures the image is cropped */
+        position: relative;
+      }
+      
+      .hero-image {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%); /* Centers the image vertically */
+        display: block;
+      }
+      
+      .text-section {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        padding: 0 1rem;
+        font-family: Helvetica, Arial, sans-serif;
+        color: #555;
+        line-height: 1.6;
+      }
+      
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+        padding: 0 1rem;
+      }
+      
+      .image-grid img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      
+      .links-section {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        padding: 0 1rem;
+      }
+      
+      .link-list {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .link-list li {
+        margin-bottom: 1rem;
+      }
+      
+      .link-list a {
+        text-decoration: none;
+        color: #555;
+        font-family: Helvetica, Arial, sans-serif;
+        transition: color 0.3s ease;
+      }
+      
+      .link-list a:hover {
+        color: #333;
+      }
+      
+      /* Back arrow styling - exactly as specified */
+    .back-arrow {
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        font-size: 50px;
+        text-decoration: none;
+        color: #757575;
+        font-weight: bold;
+        z-index: 1000;
+    }
+    
+    .back-arrow:hover {
+        color: #333;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation with matched back arrow -->
+    <nav>
+      <a class="back-arrow" href="index.html">←</a>
+    </nav>
+    
+    <!-- Hero Image Section as Banner -->
+    <div class="hero-section">
+      <img src="assets/images/BW boobinas.JPG" alt="Desert dreamscape with meteor shower" class="hero-image">
+    </div>
+    
+    <!-- Text Section -->
+    <div class="text-section">
+      <p>This is a collection of dreamscapes in desert-like environments. These conceptual spaces explore the intersection of natural landscapes and surreal architectural elements, creating immersive environments that exist between reality and imagination.</p>
+    </div>
+    
+    <!-- 3-Image Grid -->
+    <div class="image-grid">
+      <img src="assets/images/Cubehouseday.png" alt="Cube house in daylight">
+      <img src="assets/images/Arcday.png" alt="Arc structure in daylight">
+      <img src="assets/images/ArcIIday.png" alt="Second arc structure in daylight">
+    </div>
+    
+    <!-- Additional Text and Links Section -->
+    <div class="text-section">
+      <p>These dreamscapes represent an ongoing exploration of light, form, and atmosphere in digitally rendered environments. Each scene considers how architectural elements can create unique experiences within natural settings.</p>
+    </div>
+    
+    <div class="links-section">
+      <h3>Related Projects</h3>
+      <ul class="link-list">
+        <li><a href="#">Desert Structures - Physical Models</a></li>
+        <li><a href="#">Light Studies in Digital Space</a></li>
+        <li><a href="#">Architectural Photography Series</a></li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 sage sarvie</p>
+    </footer>
+  </body>
+</html>
