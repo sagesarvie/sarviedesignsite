@@ -11,6 +11,21 @@
   box-sizing: border-box;
 }
 
+.back-arrow {
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        font-size: 50px;
+        text-decoration: none;
+        color: #757575;
+        font-weight: bold;
+        z-index: 1000;
+    }
+    
+    .back-arrow:hover {
+        color: #333;
+    }
+
 @media (max-width: 1000px) {
     #back-button {
       padding-top: 30px;
@@ -109,8 +124,7 @@ p {
   <body>
     
     <nav>
-        <a id="back-button" href="index.html">  ← </a>
-        <!-- Add navigation links here if needed -->
+      <a class="back-arrow" href="index.html">←</a>
     </nav>
 
     <div class="container">

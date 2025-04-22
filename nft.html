@@ -1,67 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="nft.css" />  
-    <link rel="stylesheet" type="text/css" href="subpage-footer.css" /> 
-    <link rel="stylesheet" type="text/css" href="subpage-header.css" /> 
-    <title> sage sarvie | nfts </title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" type="image/png" href="assets/images/120020.jpg">
+  <title>sage sarvie | nfts</title>
+  <style>
+    @font-face {
+      font-family: 'Pistilli Roman';
+      src: url('assets/Pistilli-Roman.otf') format('opentype');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    /* Header navigation styles */
+    nav {
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .back-arrow {
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        font-size: 50px;
+        text-decoration: none;
+        color: #757575;
+        font-weight: bold;
+        z-index: 1000;
+    }
+    
+    .back-arrow:hover {
+        color: #333;
+    }
+
+    /* Page title */
+    .page-title {
+      font-family: 'Pistilli Roman', serif;
+      color: rgb(192, 203, 186);
+      font-size: 6vw;
+      font-weight: normal;
+      margin: 0;
+      text-align: center;
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+
+    /* Gallery layout - Staggered/Brick Layout */
+    .container {
+      max-width: 1200px;
+      margin: 120px auto 40px;
+      padding: 0 20px;
+    }
+
+    .masonry-gallery {
+      column-count: 2;
+      column-gap: 40px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .masonry-gallery li {
+      break-inside: avoid;
+      margin-bottom: 40px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .masonry-gallery img,
+    .masonry-gallery video {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .video-container {
+      width: 100%;
+      position: relative;
+    }
+
+    /* Size limit for the large image/video */
+    .size-limit {
+      max-height: 600px;
+      object-fit: cover;
+    }
+    
+    .masonry-gallery li:hover img,
+    .masonry-gallery li:hover video {
+      transform: scale(1.02);
+    }
+
+    /* Link styling */
+    .custom-paragraph {
+      position: relative;
+      display: block;
+      font-size: 18px;
+      color: #a6adaa;
+      text-decoration: none;
+      padding: 10px 0;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .custom-paragraph:hover {
+      color: grey;
+    }
+
+    /* Content styling */
+    main {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+      color: #5c5c5c;
+    }
+
+    main p {
+      line-height: 1.6;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #a6adaa;
+      font-size: 14px;
+    }
+
+    /* Remove video controls on hover */
+    video::-webkit-media-controls {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    video:hover::-webkit-media-controls {
+      opacity: 1;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .masonry-gallery {
+        column-count: 1;
+      }
+
+      .page-title {
+        font-size: 8vw;
+        padding-top: 60px;
+      }
+
+      .container {
+        margin-top: 80px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a id="back-button" href="index.html">  ← </a>
-        <!-- Add navigation links here if needed -->
-    </nav>
+  <nav>
+    <a class="back-arrow" href="index.html">←</a>
+  </nav>
+
   <div class="container">
-    <ul class="image-gallery">
+    <ul class="masonry-gallery">
       <li>
-        <a class="custom-paragraph" href="https://wild.xyz/sage-sarvie/surreality/" target="_blank" rel="noreferrer">
+        <a class="custom-paragraph" href="https://wild.xyz/sage-sarvie/surreality/">
           surreality - WildXYZ
+          <img src="assets/images/Surreality01.png" alt="Surreality NFT artwork" />
         </a>
-        <img src="assets/images/Surreality01.webp" alt="" />
+        
       </li>
       <li>
-        <a class="custom-paragraph" href="https://rarible.com/sagesarvie" target="_blank" rel="noreferrer">
-        rarible
+        <a class="custom-paragraph" href="https://rarible.com/sagesarvie">
+          rarible
+          <video autoplay loop muted playsinline>
+            <source src="assets/videos/Grassgrow.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </a>
-        <video autoplay loop muted controls>
-          <source src="assets/videos/Grassgrow.mov" type="video/mp4">
-        </video>
+       
       </li>
-    </ul>
-    <ul class="image-gallery-3">
       <li>
-        <a class="custom-paragraph" href="https://opensea.io/sagesarvie/" target="_blank" rel="noreferrer">
-          opensea 
+        <a class="custom-paragraph" href="https://opensea.io/sagesarvie/">
+          opensea
+          <video class="size-limit" autoplay loop muted playsinline>
+            <source src="assets/videos/Mintie.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </a>
         <div class="video-container">
-          <video autoplay loop muted controls>
-            <source src="assets/videos/Mintie.mov" type="video/mp4">
-          </video>
+         
         </div>
-    </li>
+      </li>
     </ul>
   </div>
 
   <main>
-      <section>
-          <p>This is a collection of nfts available through various marketplaces.</p>
-      </section>
-
-      <section>
-        <p></p>
+    <section>
+      <p>This is a collection of nfts available through various marketplaces.</p>
     </section>
-    
   </main>
 
-  <aside>
-      <!-- Add additional content or widgets here if needed -->
-  </aside>
-
   <footer>
-      <p>&copy; 2023 sage sarvie</p>
+    <p>&copy; 2023 sage sarvie</p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const videos = document.querySelectorAll('video');
+      videos.forEach(video => {
+        // Remove controls attribute but add it back on hover
+        video.removeAttribute('controls');
+        
+        video.addEventListener('mouseenter', function() {
+          this.setAttribute('controls', '');
+        });
+        
+        video.addEventListener('mouseleave', function() {
+          this.removeAttribute('controls');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
