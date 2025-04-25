@@ -61,17 +61,17 @@
     /* Taglines styles */
     .taglines-container {
       position: absolute;
-      top: 180px; /* Adjust this value based on your title's height */
+      top: 180px;
       left: 40px;
       z-index: 100;
     }
 
     .taglines-container .tagline,
     .taglines-container .subtagline {
-      color: rgb(69, 69, 69); /* Make text visible against hero image */
+      color: rgb(69, 69, 69);
       margin-left: 0;
       margin-bottom: 5px;
-      text-shadow: 1px 1px 3px rgba(101, 101, 101, 0.75); /* Adds shadow for better visibility */
+      text-shadow: 1px 1px 3px rgba(101, 101, 101, 0.75);
     }
 
     .tagline, .subtagline {
@@ -123,7 +123,7 @@
       position: absolute;
       left: -30px;
       top: 50%;
-      margin-top: -50px;
+      margin-top: -30px;
     }
 
     h1 {
@@ -140,6 +140,7 @@
       color: grey;
     }
 
+    /* Desktop Navigation */
     .nav-links {
       position: fixed;
       top: 50px;
@@ -164,30 +165,152 @@
       color: gray;
     }
 
+    /* Mobile Navigation Drawer */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .menu-icon {
+      width: 30px;
+      height: 20px;
+      position: relative;
+      margin: 0;
+      transform: rotate(0deg);
+      transition: .5s ease-in-out;
+      cursor: pointer;
+    }
+
+    .menu-icon span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: rgb(166, 173, 170);
+      border-radius: 3px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+    }
+
+    .menu-icon span:nth-child(1) {
+      top: 0px;
+    }
+
+    .menu-icon span:nth-child(2), .menu-icon span:nth-child(3) {
+      top: 10px;
+    }
+
+    .menu-icon span:nth-child(4) {
+      top: 20px;
+    }
+
+    .menu-icon.open span:nth-child(1) {
+      top: 10px;
+      width: 0%;
+      left: 50%;
+    }
+
+    .menu-icon.open span:nth-child(2) {
+      transform: rotate(45deg);
+    }
+
+    .menu-icon.open span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    .menu-icon.open span:nth-child(4) {
+      top: 10px;
+      width: 0%;
+      left: 50%;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -280px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s ease;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      padding: 80px 15px 30px;
+    }
+
+    .mobile-nav.open {
+      right: 0;
+    }
+
+    .mobile-nav-link {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-decoration: none;
+      font-family: Helvetica, sans-serif;
+      font-weight: bold;
+      color: rgb(166, 173, 170);
+      transition: color 0.3s;
+      text-align: left;
+      padding: 5px 0;
+    }
+
+    .mobile-nav-link:hover {
+      color: gray;
+    }
+
+    /* Overlay for when drawer is open */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
     footer {
       height: 60px;
       text-align: center;
     }
 
-    #floating-house { left: 12%; top: 100px; } /* Adjusted to make room for banner */
-    #cube-house { right: 12%; top: 400px; } /* Adjusted to make room for banner */
-    #pond-lounge { left: 17%; top: 800px; } /* Adjusted to make room for banner */
-    #bedroom-render { right: 15%; top: 1200px; } /* Adjusted to make room for banner */
-    #product-design { left: 14%; top: 1800px; } /* Adjusted to make room for banner */
+    #floating-house { left: 12%; top: 100px; }
+    #cube-house { right: 12%; top: 500px; }
+    #pond-lounge { left: 17%; top: 900px; }
+    #bedroom-render { right: 15%; top: 1200px; }
+    #product-design { left: 14%; top: 1800px; }
 
-    /* Responsive styles */
+    /* Improved Responsive styles */
     @media (max-width: 1200px) {
       .image-container { width: 50%; }
     }
 
     @media (max-width: 900px) {
-      h1 { font-size: 8vw; }
+      h1 { font-size: 10vw; }
       .image-container { width: 60%; }
     }
 
     @media (max-width: 768px) {
       .hero-banner {
-        height: 200px;
+        height: 400px;
       }
 
       .title-container {
@@ -196,73 +319,77 @@
 
       .taglines-container {
         left: 20px;
-        top: 90px; /* Adjusted for smaller screens */
+        top: 100px;
       }
       
       .taglines-container .tagline,
       .taglines-container .subtagline {
-        font-size: 2.5vw;
+        font-size: 16px;
       }
 
       h1 {
-        font-size: 8vw;
+        font-size: 12vw;
       }
 
+      /* Hide desktop nav and show mobile menu toggle */
       .nav-links {
-        top: 30px;
-        right: 20px;
+        display: none;
       }
 
-      .nav-link {
-        font-size: 14px;
-        margin-bottom: 4px;
-      }
-
-      .rotated-text {
-        writing-mode: horizontal-tb;
-        transform: none;
-        position: static;
-        text-align: center;
-        font-size: 18px;
-        margin: 10px 0 5px;
+      .menu-toggle {
         display: block;
       }
 
+      /* Mobile layout conversion - improved centering */
       .content-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-bottom: 40px;
+        padding: 0; /* Remove padding that was causing asymmetry */
         position: static;
       }
 
       .image-container {
         position: relative;
         width: 90%;
-        margin: 0 auto 40px;
+        max-width: 400px;
+        margin: 40px auto;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        /* Center perfectly */
+        left: 0 !important;
+        right: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .rotated-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        position: relative;
+        left: 0;
+        top: 0;
+        margin: 0 0 10px 0;
         text-align: center;
+        font-size: 20px;
+        display: block;
       }
 
       .image-with-rotated-text {
-        display: flex;
         flex-direction: column;
         align-items: center;
-      }
-
-      .image-container img,
-      .image-container video {
-        max-width: 100%;
-        margin: 0 auto;
+        width: 100%; /* Ensure full width */
       }
     }
 
     @media (max-width: 480px) {
       .hero-banner {
-        height: 150px;
+        height: 300px;
       }
 
       .taglines-container {
-        top: 70px; /* Further adjusted for smaller screens */
+        top: 90px;
       }
 
       .taglines-container .tagline,
@@ -270,14 +397,13 @@
         font-size: 14px;
       }
 
-      .nav-link {
-        font-size: 12px;
-        margin-bottom: 3px;
-      }
-
       .image-container {
-        width: 90%;
-        margin-bottom: 40px;
+        width: 90%; /* Slightly reduced from 95% for better margins */
+        margin: 30px auto;
+      }
+      
+      h1 {
+        font-size: 14vw;
       }
     }
   </style>
@@ -298,12 +424,34 @@
     <p class="subtagline">explore each chapter below ↓</p>
   </div>
 
+  <!-- Desktop Navigation -->
   <div class="nav-links">
     <a class="nav-link" href="mailto:sagesarvie@gmail.com">sagesarvie@gmail.com</a>
     <a class="nav-link" href="https://instagram.com/sagesarvie">@sagesarvie</a>
     <a class="nav-link" href="about.html">about</a>
     <a class="nav-link" href="nft.html">nfts</a>
   </div>
+
+  <!-- Mobile Navigation Drawer Toggle -->
+  <button class="menu-toggle" id="menu-toggle">
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a class="mobile-nav-link" href="mailto:sagesarvie@gmail.com">sagesarvie@gmail.com</a>
+    <a class="mobile-nav-link" href="https://instagram.com/sagesarvie">@sagesarvie</a>
+    <a class="mobile-nav-link" href="about.html">about</a>
+    <a class="mobile-nav-link" href="nft.html">nfts</a>
+  </div>
+
+  <!-- Overlay for when drawer is open -->
+  <div class="overlay" id="overlay"></div>
 
   <!-- Hero Banner Section with both image and video support -->
   <div class="hero-banner">
@@ -385,6 +533,39 @@
         heroVideo.innerHTML = `<source src="${randomMedia.src}" type="video/mp4">`;
         heroVideo.load(); // Reload the video with new source
       }
+      
+      // Mobile Navigation Drawer functionality
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      const menuIcon = document.querySelector('.menu-icon');
+      const overlay = document.getElementById('overlay');
+      
+      // Toggle menu open/closed
+      menuToggle.addEventListener('click', function() {
+        mobileNav.classList.toggle('open');
+        menuIcon.classList.toggle('open');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+      });
+      
+      // Close menu when clicking overlay
+      overlay.addEventListener('click', function() {
+        mobileNav.classList.remove('open');
+        menuIcon.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+      
+      // Close menu when clicking a nav link
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileNav.classList.remove('open');
+          menuIcon.classList.remove('open');
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
     });
 
     function scrollToTop() {
