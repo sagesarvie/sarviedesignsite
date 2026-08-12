@@ -6,10 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>sage sarvie</title>
   <style>
+    html {
+      height: 100%;
+    }
+
     body {
       background: white;
       width: 100%;
       min-height: 100vh;
+      min-height: 100dvh;
       overflow-x: hidden;
       -webkit-text-size-adjust: none;
       margin: 0;
@@ -20,10 +25,12 @@
       src: url('assets/Pistilli-Roman.otf') format('opentype');
     }
 
-    /* Hero Banner Styles - now full page height */
+    /* Hero Banner Styles - full viewport height. The dvh line overrides vh
+       on browsers that support it, which handles mobile browser toolbars. */
     .hero-banner {
       width: 100%;
       height: 100vh;
+      height: 100dvh;
       overflow: hidden;
       position: relative;
     }
@@ -50,21 +57,22 @@
       margin: 0;
     }
 
-    /* Title styles */
-    .title-container {
+    /* Title + tagline now live in ONE fixed container and stack in normal
+       document flow. This means the browser reserves exactly as much space
+       as the title actually renders at (including this custom font's
+       swashes/descenders) before the tagline starts — no more guessing a
+       pixel or vw offset that breaks at some screen size or font. */
+    .hero-text {
       position: fixed;
       top: 20px;
       left: 40px;
       z-index: 100;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Taglines styles - top offset scales with the title's height (8vw font, ~1.2 line-height)
-       so it always clears the title regardless of viewport width */
     .taglines-container {
-      position: absolute;
-      top: calc(9.6vw + 50px);
-      left: 40px;
-      z-index: 100;
+      margin-top: 20px;
     }
 
     .taglines-container .tagline,
@@ -132,6 +140,7 @@
       color: rgb(192, 203, 186);
       font-size: 8vw;
       font-weight: normal;
+      line-height: 1.15;
       margin: 0;
       cursor: pointer;
       transition: color 0.3s;
@@ -308,21 +317,19 @@
     @media (max-width: 900px) {
       h1 { font-size: 9vw; }
       .image-container { width: 60%; }
-      .taglines-container {
-        top: calc(10.8vw + 50px);
-      }
     }
     
     @media (max-width: 768px) {
       .hero-banner {
         height: 100vh;
+        height: 100dvh;
       }
       
       h1 { 
         font-size: 10vw; 
       }
 
-      .title-container {
+      .hero-text {
         left: 20px;
         top: 20px;
         width: 70%; /* Limit width to prevent overlap */
@@ -333,11 +340,6 @@
         right: 40px;
       }
 
-      .taglines-container {
-        left: 20px;
-        top: calc(12vw + 50px);
-      }
-      
       .taglines-container .tagline,
       .taglines-container .subtagline {
         font-size: 16px;
@@ -398,18 +400,15 @@
     @media (max-width: 480px) {
       .hero-banner {
         height: 100vh;
+        height: 100dvh;
       }
       
       h1 { 
         font-size: 9vw; 
       }
 
-      .title-container {
+      .hero-text {
         width: 65%; /* Further reduce width on small screens */
-      }
-
-      .taglines-container {
-        top: calc(11vw + 60px);
       }
 
       .taglines-container .tagline,
@@ -428,15 +427,14 @@
 <body>
   <div id="top"></div>
   
-  <!-- Separate title container -->
-  <div class="title-container">
+  <!-- Title + tagline share one container so they stack in normal document
+       flow, guaranteeing the tagline always clears the title -->
+  <div class="hero-text">
     <h1 id="scrollToTop" onclick="scrollToTop()">sage sarvie</h1>
-  </div>
-  
-  <!-- Separate taglines container -->
-  <div class="taglines-container">
-    <p class="tagline">architectural engineer / designer / MBA.</p>
-    <p class="subtagline">explore each chapter below ↓</p>
+    <div class="taglines-container">
+      <p class="tagline">architectural engineer / designer / MBA.</p>
+      <p class="subtagline">explore each chapter below ↓</p>
+    </div>
   </div>
 
   <!-- Desktop Navigation -->
