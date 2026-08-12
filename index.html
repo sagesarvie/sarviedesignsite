@@ -20,10 +20,10 @@
       src: url('assets/Pistilli-Roman.otf') format('opentype');
     }
 
-    /* Hero Banner Styles */
+    /* Hero Banner Styles - now full page height */
     .hero-banner {
       width: 100%;
-      height: 750px;
+      height: 100vh;
       overflow: hidden;
       position: relative;
     }
@@ -58,10 +58,11 @@
       z-index: 100;
     }
 
-    /* Taglines styles */
+    /* Taglines styles - top offset scales with the title's height (8vw font, ~1.2 line-height)
+       so it always clears the title regardless of viewport width */
     .taglines-container {
       position: absolute;
-      top: 180px;
+      top: calc(9.6vw + 50px);
       left: 40px;
       z-index: 100;
     }
@@ -307,11 +308,14 @@
     @media (max-width: 900px) {
       h1 { font-size: 9vw; }
       .image-container { width: 60%; }
+      .taglines-container {
+        top: calc(10.8vw + 50px);
+      }
     }
     
     @media (max-width: 768px) {
       .hero-banner {
-        height: 400px;
+        height: 100vh;
       }
       
       h1 { 
@@ -331,7 +335,7 @@
 
       .taglines-container {
         left: 20px;
-        top: 100px;
+        top: calc(12vw + 50px);
       }
       
       .taglines-container .tagline,
@@ -393,7 +397,7 @@
 
     @media (max-width: 480px) {
       .hero-banner {
-        height: 500px;
+        height: 100vh;
       }
       
       h1 { 
@@ -405,7 +409,7 @@
       }
 
       .taglines-container {
-        top: 200px;
+        top: calc(11vw + 60px);
       }
 
       .taglines-container .tagline,
